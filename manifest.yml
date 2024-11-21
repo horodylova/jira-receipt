@@ -1,0 +1,17 @@
+modules:
+  jira:globalPage:
+    - key: jira-receipt-hello-world-page
+      resource: main
+      resolver:
+        function: resolver
+      title: jira-receipt
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/751c907e-eae1-4022-b960-354c09c0682c
