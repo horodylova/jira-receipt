@@ -4,7 +4,7 @@ modules:
       resource: main
       resolver:
         function: resolver
-      title: jira-receipt
+      title: Jira Receipt Svitlana
   function:
     - key: resolver
       handler: index.handler
