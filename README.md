@@ -7,10 +7,13 @@ Users can input the board name and username to get a clear and concise report of
 
 📊 Dynamic Metrics:
 
-Total tasks on the board.
-Tasks assigned to the user.
-Tasks in progress.
-Tasks completed.
+* Total tasks on the board.
+
+* Tasks assigned to the user.
+
+* Tasks in progress.
+
+* Tasks completed.
 
 🖋️ Customizable:
 Works with any Jira board, adapting to its specific columns.
@@ -22,15 +25,14 @@ Enter the details, click Generate, and get your summary instantly.
 ⚙️ Prerequisites
 Ensure you have the following installed:
 
-Node.js (version 18.x or higher recommended)
-Forge CLI
-A Jira Cloud account
+* Node.js (version 18.x or higher recommended)
+* Forge CLI
+* A Jira Cloud account
+
+
 🛠️ Installation
 Clone this repository:
-
-bash
 git clone https://github.com/horodylova/jira-receipt
-
 cd jira-receipt
 
 Install dependencies:
