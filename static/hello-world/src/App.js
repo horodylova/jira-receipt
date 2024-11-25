@@ -9,10 +9,18 @@ function App() {
     }, []);
 
     return (
-        <div>
+        <div style={{ 
+            backgroundColor: '#f0f8ff', 
+            color: '#333', 
+            fontFamily: 'Arial, sans-serif', 
+            padding: '20px', 
+            borderRadius: '10px',
+            textAlign: 'center'
+        }}>
             {data ? data : 'Loading...'}
         </div>
     );
 }
 
 export default App;
+

@@ -11,6 +11,8 @@ modules:
 resources:
   - key: main
     path: static/hello-world/build
+    tunnel:
+      port: 3000
 app:
   runtime:
     name: nodejs20.x
