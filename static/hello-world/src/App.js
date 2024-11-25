@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { invoke } from '@forge/bridge';
-import { ReceiptForm } from './components/ReceiptForm';
+import { ReceiptForm } from './components/ReceiptForm/ReceiptForm.jsx';
 
 function App() {
     const [data, setData] = useState(null);

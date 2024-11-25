@@ -7,7 +7,8 @@
     "@atlaskit/css-reset": "^6.6.2",
     "@forge/bridge": "4.1.0",
     "react": "^16",
-    "react-dom": "^16"
+    "react-dom": "^16",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "react-scripts": "^5.0.1"
