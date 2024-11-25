@@ -1,15 +1,23 @@
 🎟️ Jira Receipt
+
 📄 A Forge-powered app to generate receipt-style summaries of Jira board activity!
 Users can input the board name and username to get a clear and concise report of their work metrics.
 
 ✨ Features
+
 📊 Dynamic Metrics:
+
 Total tasks on the board.
 Tasks assigned to the user.
 Tasks in progress.
 Tasks completed.
-🖋️ Customizable: Works with any Jira board, adapting to its specific columns.
-🚀 Fast and Intuitive: Enter the details, click "Generate," and get your summary instantly.
+
+🖋️ Customizable:
+Works with any Jira board, adapting to its specific columns.
+
+🚀 Fast and Intuitive:
+Enter the details, click Generate, and get your summary instantly.
+
 📦 Getting Started
 ⚙️ Prerequisites
 Ensure you have the following installed:
@@ -22,58 +30,51 @@ Clone this repository:
 
 bash
 git clone https://github.com/horodylova/jira-receipt
+
 cd jira-receipt
+
 Install dependencies:
 
 bash
 npm install
-Start the React frontend:
 
+Start the React frontend:
 bash
 cd static/hello-world
 npm start
-Run Forge tunnel:
 
+Run Forge tunnel:
 bash
 cd ../..
 forge tunnel
-Deploy and install the app:
 
+Deploy and install the app:
 bash
 forge deploy
 forge install
+
 Open your Jira site and navigate to Apps → Jira Receipt.
 
 🚀 Usage
 Navigate to your Jira site.
 Open Apps → Jira Receipt.
-Fill in:
+Fill in the following details:
 Board Name
 User Name
 Click Generate to see your receipt-style summary.
-📁 Project Structure
-plaintext
 
-jira-receipt/
-├── manifest.yml         # Forge app configuration
-├── src/                 # Backend functions and logic
-│   ├── index.js         # Main resolver for backend logic
-├── static/hello-world/  # React frontend
-│   ├── public/          # Static public assets
-│   ├── src/             # React components
-│   │   ├── App.js       # Main React component
-│   │   ├── components/  # Reusable components (e.g., ReceiptForm.jsx)
 🛠️ Development
 Running Locally
-Start Forge Tunnel:
 
+Start Forge Tunnel:
 bash
 forge tunnel
-Start the React frontend:
 
+Start the React frontend:
 bash
 cd static/hello-world
 npm start
+
 Open your Jira site and test the app in real-time.
 
 🔄 Deploying Updates
@@ -88,6 +89,8 @@ forge deploy
 
 👩‍💻 Developer
 Name: Svitlana Horodylova
-Email: [horodylova.sv@gmail.com]
-LinkedIn: [[your-github-profile](https://www.linkedin.com/in/svitlana-horodylova)]
+Email: horodylova.sv@gmail.com
+LinkedIn: Svitlana Horodylova
+
 🎉 Start generating beautiful Jira receipts today!
+
