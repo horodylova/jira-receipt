@@ -1,47 +1,93 @@
-# Forge Hello World
+🎟️ Jira Receipt
+📄 A Forge-powered app to generate receipt-style summaries of Jira board activity!
+Users can input the board name and username to get a clear and concise report of their work metrics.
 
-This project contains a Forge app written in JavaScript that displays `Hello World!` in a Jira global page.
+✨ Features
+📊 Dynamic Metrics:
+Total tasks on the board.
+Tasks assigned to the user.
+Tasks in progress.
+Tasks completed.
+🖋️ Customizable: Works with any Jira board, adapting to its specific columns.
+🚀 Fast and Intuitive: Enter the details, click "Generate," and get your summary instantly.
+📦 Getting Started
+⚙️ Prerequisites
+Ensure you have the following installed:
 
-See [developer.atlassian.com/platform/forge/](https://developer.atlassian.com/platform/forge) for documentation and tutorials explaining Forge.
+Node.js (version 18.x or higher recommended)
+Forge CLI
+A Jira Cloud account
+🛠️ Installation
+Clone this repository:
 
-## Requirements
+bash
+git clone https://github.com/horodylova/jira-receipt
+cd jira-receipt
+Install dependencies:
 
-See [Set up Forge](https://developer.atlassian.com/platform/forge/set-up-forge/) for instructions to get set up.
-
-## Quick start
-- Install top-level dependencies:
-```
+bash
 npm install
-```
+Start the React frontend:
 
-- Install dependencies (inside of the `static/hello-world` directory):
-```
-npm install
-```
+bash
+cd static/hello-world
+npm start
+Run Forge tunnel:
 
-- Modify your app by editing the files in `static/hello-world/src/`.
+bash
+cd ../..
+forge tunnel
+Deploy and install the app:
 
-- Build your app (inside of the `static/hello-world` directory):
-```
-npm run build
-```
-
-- Deploy your app by running:
-```
+bash
 forge deploy
-```
-
-- Install your app in an Atlassian site by running:
-```
 forge install
-```
+Open your Jira site and navigate to Apps → Jira Receipt.
 
-### Notes
-- Use the `forge deploy` command when you want to persist code changes.
-- Use the `forge install` command when you want to install the app on a new site.
-- Once the app is installed on a site, the site picks up the new app changes you deploy without needing to rerun the install command.
+🚀 Usage
+Navigate to your Jira site.
+Open Apps → Jira Receipt.
+Fill in:
+Board Name
+User Name
+Click Generate to see your receipt-style summary.
+📁 Project Structure
+plaintext
 
-## Support
+jira-receipt/
+├── manifest.yml         # Forge app configuration
+├── src/                 # Backend functions and logic
+│   ├── index.js         # Main resolver for backend logic
+├── static/hello-world/  # React frontend
+│   ├── public/          # Static public assets
+│   ├── src/             # React components
+│   │   ├── App.js       # Main React component
+│   │   ├── components/  # Reusable components (e.g., ReceiptForm.jsx)
+🛠️ Development
+Running Locally
+Start Forge Tunnel:
 
-See [Get help](https://developer.atlassian.com/platform/forge/get-help/) for how to get help and provide feedback.
+bash
+forge tunnel
+Start the React frontend:
 
+bash
+cd static/hello-world
+npm start
+Open your Jira site and test the app in real-time.
+
+🔄 Deploying Updates
+
+Build the React frontend:
+bash
+npm run build
+
+Deploy the updated app:
+bash
+forge deploy
+
+👩‍💻 Developer
+Name: Svitlana Horodylova
+Email: [horodylova.sv@gmail.com]
+LinkedIn: [[your-github-profile](https://www.linkedin.com/in/svitlana-horodylova)]
+🎉 Start generating beautiful Jira receipts today!
