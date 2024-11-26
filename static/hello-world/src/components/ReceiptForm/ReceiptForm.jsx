@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import {
   Wrapper,
+  FormContainer,
   Title,
   Subtitle,
   Input,
   Button,
-} from "./ReceiptForm.styles.js";
+} from "./ReceiptForm.styles";
 
 export const ReceiptForm = ({ onSubmit }) => {
   const [boardName, setBoardName] = useState("");
@@ -17,6 +18,7 @@ export const ReceiptForm = ({ onSubmit }) => {
   };
   return (
     <Wrapper>
+       <FormContainer>
       <Title>Jira Receipt</Title>
       <Subtitle>
         Generate a receipt-style summary of your Jira Board activity
@@ -39,6 +41,7 @@ export const ReceiptForm = ({ onSubmit }) => {
         />
         <Button type="submit">Generate</Button>
       </form>
+      </FormContainer>
     </Wrapper>
   );
 };
