@@ -15,6 +15,8 @@ export const ReceiptForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(boardName, userName);
+     setBoardName("")
+     setUserName("")
   };
   return (
     <Wrapper>
