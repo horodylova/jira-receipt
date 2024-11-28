@@ -1,4 +1,3 @@
+import resolver from './resolvers/resolver.js';
 
-import resolver from "./resolvers/resolver"
-
-export const handler = resolver.getDefinitions()
+export const handler = resolver.getDefinitions();

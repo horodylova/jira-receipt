@@ -1,14 +1,12 @@
-const fetch = require('node-fetch');
+import api from '@forge/api';
 
-async function fetchBoards() {
+export async function fetchBoards() {
     try {
-        const url = 'https://jira-receipt.atlassian.net/rest/agile/1.0/board';
-        const response = await fetch(url, {
+        const response = await api.asApp().requestJira('/rest/agile/1.0/board', {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer <access_token>', 
-                'Accept': 'application/json'
-            }
+                'Accept': 'application/json',
+            },
         });
 
         if (!response.ok) {
@@ -19,9 +17,7 @@ async function fetchBoards() {
         console.log('Boards:', data);
         return data;
     } catch (error) {
-        console.error(error);
+        console.error('Failed to fetch boards:', error);
         throw error;
     }
 }
-
-module.exports = { fetchBoards };

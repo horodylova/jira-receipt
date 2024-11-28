@@ -1,26 +1,30 @@
 modules:
   jira:globalPage:
-    - key: jira-receipt-global-page
+    - key: jira-receipt-hello-world-page
       resource: main
       resolver:
         function: resolver
       title: Jira Receipt Svitlana
+  function:
+    - key: resolver
+      handler: index.handler
 resources:
   - key: main
     path: static/hello-world/build
     tunnel:
       port: 3000
-function:
-  - key: resolver
-    handler: index.handler
 app:
   runtime:
     name: nodejs20.x
+  id: ari:cloud:ecosystem::app/751c907e-eae1-4022-b960-354c09c0682c
 permissions:
-  scopes:
-   - read:board-scope:jira-software
+  scopes: 
+    - read:board-scope:jira-software
     - read:project:jira
     - read:jira-work
     - read:issue:jira
     - read:jql:jira
-id: ari:cloud:ecosystem::app/<your-app-id>
+  content:
+    styles:
+      - unsafe-inline
+ 
