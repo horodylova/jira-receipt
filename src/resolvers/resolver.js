@@ -1,4 +1,4 @@
-import { Resolver } from '@forge/resolver';
+import Resolver from '@forge/resolver'; 
 import { fetchBoards } from '../handlers/createIssueHandler.js';
 
 const resolver = new Resolver();
@@ -15,5 +15,6 @@ resolver.define('getBoards', async () => {
 });
 
 export default resolver;
+
 
 

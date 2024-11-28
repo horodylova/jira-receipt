@@ -1,8 +1,8 @@
-import api from '@forge/api';
+import api, { route } from '@forge/api';
 
 export async function fetchBoards() {
     try {
-        const response = await api.asApp().requestJira('/rest/agile/1.0/board', {
+        const response = await api.asApp().requestJira(route`/rest/agile/1.0/board`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
