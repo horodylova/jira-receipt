@@ -1,27 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { invoke } from '@forge/bridge';
 import { ReceiptForm } from './components/ReceiptForm/ReceiptForm.jsx';
 
 function App() {
-    const [boards, setBoards] = useState([])
-    useEffect(() => {
-        invoke('getBoards')
-            .then((data) => {
-                console.log('Fetched boards from resolver:', data);
-                setBoards(data.values)
+    const handleFormSubmit = (boardName, userName) => {
+        invoke('findUserOnBoard', { boardName, userName })
+            .then((user) => {
+                console.log('Found user:', user);
             })
             .catch((error) => {
-                console.error('Error fetching boards from resolver:', error);
+                console.error('Error finding user on board:', error);
             });
-    }, []);
-
-    const handleFormSubmit = (boardName) => {
-       const selectedBoard = boards.find((board) => board.name === boardName)
-       if (selectedBoard) {
-        console.log('Selected board:', selectedBoard);
-    } else {
-        console.error('Board not found:', boardName);
-    }
     };
 
     return (
@@ -30,4 +19,5 @@ function App() {
 }
 
 export default App;
+
 

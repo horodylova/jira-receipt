@@ -1,20 +1,19 @@
-import Resolver from '@forge/resolver'; 
-import { fetchBoards } from '../handlers/createIssueHandler.js';
+import Resolver from '@forge/resolver';
+import { fetchUserFromBoard } from '../handlers/createIssueHandler';  
 
 const resolver = new Resolver();
 
-resolver.define('getBoards', async () => {
-    try {
-        const boards = await fetchBoards();
-        console.log('Fetched boards in resolver:', boards);
-        return boards;
-    } catch (error) {
-        console.error('Error in resolver while fetching boards:', error);
-        throw error;
+resolver.define('findUserOnBoard', async ({ payload }) => {
+    const { boardName, userName } = payload;
+    if (!boardName || !userName) {
+        throw new Error('Both boardName and userName are required.');
     }
+    return await fetchUserFromBoard(boardName, userName);
 });
 
 export default resolver;
+
+
 
 
 
