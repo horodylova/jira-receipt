@@ -10,13 +10,13 @@ import {
 
 export const ReceiptForm = ({ onSubmit }) => {
   const [boardName, setBoardName] = useState("");
-  const [userName, setUserName] = useState("");
+  // const [userName, setUserName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(boardName, userName);
+    onSubmit(boardName);
      setBoardName("")
-     setUserName("")
+    //  setUserName("")
   };
   return (
     <Wrapper>
@@ -34,13 +34,13 @@ export const ReceiptForm = ({ onSubmit }) => {
           placeholder="Enter board name"
           required
         />
-        <Input
+        {/* <Input
           type="text"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           placeholder="Enter user name"
           required
-        />
+        /> */}
         <Button type="submit">Generate</Button>
       </form>
       </FormContainer>
