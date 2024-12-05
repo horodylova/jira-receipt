@@ -1,6 +1,6 @@
 import api, { route } from '@forge/api';
 
-export async function fetchBoards({ boardName }) {
+export async function fetchBoards() {
     try {
         const response = await api.asApp().requestJira(route`/rest/agile/1.0/board`, {
             method: 'GET',
@@ -14,14 +14,14 @@ export async function fetchBoards({ boardName }) {
         }
 
         const boards = await response.json();
-        const board = boards.values.find((b) => b.name === boardName);
+        // const board = boards.values.find((b) => b.name === boardName);
             
-        if(!board) {
-            throw new Error (`Board "{boardName}" not found.`)
-        }
-        return board;
+        // if(!board) {
+        //     throw new Error (`Board "{boardName}" not found.`)
+        // }
+        return boards;
     } catch (error) {
-        console.error(`Failed to fetch board: ${error.message}`);
+        // console.error(`Failed to fetch board: ${error.message}`);
         throw error;
     }
 }
