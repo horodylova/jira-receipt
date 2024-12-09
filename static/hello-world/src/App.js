@@ -1,23 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { invoke } from '@forge/bridge';
-import { ReceiptForm } from './components/ReceiptForm/ReceiptForm.jsx';
+import ReceiptForm from './components/ReceiptForm/ReceiptForm.jsx';
 
 function App() {
-    const handleFormSubmit = (boardName, userName) => {
-        invoke('findUserOnBoard', { boardName, userName })
-            .then((user) => {
-                console.log('Found user:', user);
+    useEffect(() => {
+        invoke('getBoards') 
+            .then((data) => {
+                console.log('Fetched all boards from resolver:', data); 
             })
             .catch((error) => {
-                console.error('Error finding user on board:', error);
+                console.error('Error fetching boards from resolver:', error);
             });
+    }, []); 
+
+    const handleFormSubmit = (boardName ) => {
+        console.log(boardName );
     };
 
     return (
-        <ReceiptForm onSubmit={handleFormSubmit} />
+        <div>
+            <h1>Find Board</h1>
+            <ReceiptForm onSubmit={handleFormSubmit} />
+        </div>
     );
 }
 
 export default App;
+
 
 

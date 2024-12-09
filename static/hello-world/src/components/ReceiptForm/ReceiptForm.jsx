@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Wrapper, FormContainer, Title, Subtitle, Input, Button } from './ReceiptForm.styles';
 
-export const ReceiptForm = ({ onSubmit }) => {
+const ReceiptForm = ({ onSubmit }) => {
     const [boardName, setBoardName] = useState('');
-    const [userName, setUserName] = useState('');
+    // const [userName, setUserName] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(boardName, userName);
-        setBoardName('');
-        setUserName('');
+        onSubmit(boardName );
+        // setBoardName('');
+        // setUserName('');
     };
 
     return (
@@ -25,13 +25,13 @@ export const ReceiptForm = ({ onSubmit }) => {
                         placeholder="Enter board name"
                         required
                     />
-                    <Input
+                    {/* <Input
                         type="text"
                         value={userName}
                         onChange={(e) => setUserName(e.target.value)}
                         placeholder="Enter user name"
                         required
-                    />
+                    /> */}
                     <Button type="submit">Generate</Button>
                 </form>
             </FormContainer>
@@ -39,3 +39,4 @@ export const ReceiptForm = ({ onSubmit }) => {
     );
 };
 
+export default ReceiptForm;
